@@ -3,8 +3,14 @@ package calculator;
 public class Calculator {
     public static int add(String input) {
         if (input == null || input.isEmpty()) {
-            return 0;  // 빈 문자열일 경우 0 반환
+            return 0;
         }
-        return Integer.parseInt(input);  // 하나의 숫자 입력 처리
+
+        String[] tokens = input.split("[,|:]");  // 쉼표 또는 콜론으로 숫자 분리
+        int sum = 0;
+        for (String token : tokens) {
+            sum += Integer.parseInt(token);
+        }
+        return sum;  // 합산한 결과 반환
     }
 }
