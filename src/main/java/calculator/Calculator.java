@@ -18,10 +18,7 @@ public class Calculator {
             // input.indexOf()
             int delimiterIndex = input.indexOf("\\");
             String customDelimiter = input.substring(2, delimiterIndex);  // "//" 이후와 "\n" 사이에 있는 구분자 추출
-            System.out.println(customDelimiter);
-            System.out.println(delimiterIndex);
             String numbersPart = input.substring(delimiterIndex + 2);  // "\n" 뒤의 숫자 부분 추출
-            System.out.println(numbersPart);
 
             // 커스텀 구분자와 쉼표, 콜론을 모두 구분자로 사용해서 토큰을 파싱
             tokens = numbersPart.split(customDelimiter + "|,|:");
@@ -34,7 +31,6 @@ public class Calculator {
         // 합산
         int sum = 0;
         for (String token : tokens) {
-            System.out.println(token);
             sum += Integer.parseInt(token);
         }
         return sum;  // 합산한 결과 반환
